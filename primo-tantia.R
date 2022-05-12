@@ -23,6 +23,11 @@ uso <- "\n{2}Usage\n.*\n{2}Arguments\n"
 print(elpdf2text[3])
 str_split(elpdf2text[3],"\n")
 
+# probar si hay mas de una instancia de función y Usage en la página
+# con str_count y luego, si es necesario partir la página para poder
+# extraer esas instancias de una u de otra con str_locate y str_sub
+# si no hay, brinca a la siguiente página
+
 # para sacar la función y su explicación; si hay mas de una instancia de la
 # función dos_comomat[1,1], llevan la misma explicación dos_comomat[1,2]
 # 

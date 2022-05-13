@@ -56,7 +56,7 @@ losusos <- str_replace_all(losusos, "\n\n","\n")
 lasfun <- str_split(losusos, "\n")
 # y se limpia de \s (es un vector dentro de una lista)
 lasfun[[1]] <- str_trim(lasfun[[1]], side = "both")
-
+# meterlas en la tabla con pkg, nomfun y def
 
 ejem <- "KKS Identification\n    Power Plants\n                   System for\n                                                    Function Key\n     Function Key, Main Groups\nA    Grid and distribution systems\nB    Power transmission and auxiliary power supply\nC    Instrumentation and control equipment\nE    Fuel supply and residues disposal\nG    Water supply and disposal\nH    Heat generation\nL    Steam, water, gas cycles\nM    Main machine sets\nN    Process energy/fluid supply for external users\n     (e.g. district heating)\nP    Cooling water systems\nQ    Auxiliary systems\nR    Gas generation and treatment\nS    Ancillary systems\nU    Structures\nW    Renewable energy plants\nX    Heavy machinery (not main machine sets)\n     (e.g. emergency diesel and generator sets)\n                              2\n"
 

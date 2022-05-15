@@ -4,7 +4,7 @@ library(pdftools)
 library(stringr)
 library(dplyr)
 # todo el documento queda en un solo vector
-elpdf2text <- pdf_text("R_Reference-53-60.pdf")
+  elpdf2text <- pdf_text("The R Reference Index V4.2.0 indice.pdf")
 # cada página es un elemento del vector
 # el patrón es:
 #   5 \n\n\n\n\n, dos espacios y el nombre de la función

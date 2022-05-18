@@ -66,7 +66,7 @@ for (i in 1:numdepags) {
 
 save(tabla_indice_manual, file = "tabla-indice-manual.RData")
 
-# para cargar la tabla, load(file = "tabla-funs-del-indice.RData")
+# para cargar la tabla, load(file = "tabla-indice-manual.RData")
 # 
 # str_length(pagina[[1]][1]) # núm de pág i
 # str_length(pagina[[1]][2]) # renglón 0

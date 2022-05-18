@@ -10,7 +10,8 @@ patt <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/paths.rds")
 # ese nombre genérico del índice del manual
 
 # AnIndex se corresponde con el índice (primeras 51 páginas del manual)
-# con el nombre genérico de la entrada y la página de caso
+# con el nombre genérico de la entrada y la página de caso; sin embargo,
+# AnIndex tiene todas las acepciones de la función en el índice del manual
 # Lo que hay que empatar es el nombre del genérico de la función con 
 # su definición, su página y repetirlas en las entradas de las
 # funciones correspondientes

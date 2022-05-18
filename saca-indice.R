@@ -7,7 +7,8 @@ library(dplyr)
 capi <- "\\d+"  # dígito, uno o más, al principio, capítulo nombre del paquete
 funi <- "\\s+" # nueve espacios al inicio de la entrada de la función
 puntos <- "\\.\\s\\."
-tabla <- data.frame(func = "", def = "", pkg = "", funclean = "", pag = "")
+tabla_indice_manual <- data.frame(func = "", def = "", pkg = "",
+                                  funclean = "", pag = "")
 
 # todo el documento queda en un solo vector con las páginas como elemento
 elpdf2text <- pdf_text("The R Reference Index V4.2.0 indice.pdf")
@@ -37,8 +38,8 @@ for (i in 1:numdepags) {
         paquete <- saca[3]
         paginum <- saca[5]
         # se integra a la base de datos
-        contador <- dim(tabla)[1] + 1
-        tabla[contador,] <- c("", "", paquete, "", paginum)
+        contador <- dim(tabla_indice_manual)[1] + 1
+        tabla_indice_manual[contador,] <- c("", "", paquete, "", paginum)
       #} else if (str_starts(renglon, pattern = funi)) {
        } else if (str_detect(renglon, pattern = puntos)) {
         # es la línea de la función > TRUE)
@@ -54,14 +55,19 @@ for (i in 1:numdepags) {
         #nomfuncion <- lineafun[10]
         nomfunpag <- lineafun[length(lineafun)]
         # se integra a la base de datos
-        contador <- dim(tabla)[1] + 1
-        tabla[contador,] <- c(nomfuncion, "", paquete,
+        contador <- dim(tabla_indice_manual)[1] + 1
+        tabla_indice_manual[contador,] <- c(nomfuncion, "", paquete,
                               nomfuncion, nomfunpag)
       } 
     }
   }
 }
+# se guarda la tablita
 
+save(tabla_indice_manual, file = "tabla-indice-manual.RData")
+
+# para cargar la tabla, load(file = "tabla-funs-del-indice.RData")
+# 
 # str_length(pagina[[1]][1]) # núm de pág i
 # str_length(pagina[[1]][2]) # renglón 0
 # str_length(pagina[[1]][3])

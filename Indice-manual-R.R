@@ -1,4 +1,6 @@
 alias <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/aliases.rds")
+print(alias)
+print(alias[10:12])
 patt <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/paths.rds")
 # aliases es un vector con nombres que tiene la lista de las entradas del
 # diccionario de los elementos del módulo en formato de objeto de R
@@ -20,13 +22,21 @@ patt <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/paths.rds")
 #    con su definición con funciones de unión
 # 5. empatar la tabla del AnIndex con la tabla del índice con unión
 
-print(alias)
-print(alias[10:12])
-archivo <- "C:/Program Files/R/R-4.2.0/library/datasets/help/AnIndex"
-# ensayo para la lectura del AnIndex
+load("pkg_baseyreco-index.RData")
+paquete <- ord_base[1]
+#para cada paquete base y recommended
+archivo <- paste0("C:/Program Files/R/R-4.2.0/library/", paquete,
+                  "/help/AnIndex")
+# la lectura del AnIndex
 tablita <- read.table(archivo, sep = "\t", col.names = c("funcion",
-                       "indxdef"))
+                       "indxdef"), quote = "", colClasses = "character")
 # perfecto!!!
+
+
+
+
+# 
+# bloque para procesar y enlistar los paquetes de la instalación original
 pkg_instalados <- installed.packages()
 colnames(pkg_instalados)
 dim(pkg_instalados)

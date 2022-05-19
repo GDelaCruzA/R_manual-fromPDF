@@ -1,7 +1,8 @@
-alias <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/aliases.rds")
-print(alias)
-print(alias[10:12])
-patt <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/paths.rds")
+#ensayos varios; saca la lista de los módulos de la instalación original de R
+# alias <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/aliases.rds")
+# print(alias)
+# print(alias[10:12])
+# patt <- readRDS("C:/Program Files/R/R-4.2.0/library/datasets/help/paths.rds")
 # aliases es un vector con nombres que tiene la lista de las entradas del
 # diccionario de los elementos del módulo en formato de objeto de R
 # (.rds). Le acompaña el archivo AnIndex en formato de texto con dos

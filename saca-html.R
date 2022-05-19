@@ -49,18 +49,18 @@ for (i in 1:num_mod){
   {
     # extrae funcion genérica del URL
     href <- str_extract(lineas.td[j], url)
-    fungenerica <- gsub('href=\"', "", href)
+    fungenerica <- gsub('href=\"', "", href, fixed = TRUE)
     fungenerica <- gsub('.html', "", fungenerica, fixed = TRUE)
     
     # extrae el nombre de la función
     orale <- str_extract(lineas.td[j], funpat)
-    funderivada <- gsub('l\">', "", orale)
-    funderivada <- gsub("</a", "", funderivada)
+    funderivada <- gsub('l\">', "", orale, fixed = TRUE)
+    funderivada <- gsub("</a", "", funderivada, fixed = TRUE)
     
     # se extrae la definición del elemento par
     orale <- str_extract(lineas.td[j + 1], defpat)
-    defini <- gsub(">", "", orale)
-    defini <- gsub("</td", "", defini)
+    defini <- gsub(">", "", orale, fixed = TRUE)
+    defini <- gsub("</td", "", defini, fixed = TRUE)
     contador <- dim(tabla_indice_html)[1] + 1
     tabla_indice_html[contador, ] <- c(funderivada, defini, fungenerica,
                                        modulo, "")

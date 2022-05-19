@@ -7,8 +7,8 @@ library(dplyr)
 capi <- "\\d+"  # dígito, uno o más, al principio, capítulo nombre del paquete
 funi <- "\\s+" # nueve espacios al inicio de la entrada de la función
 puntos <- "\\.\\s\\."
-tabla_indice_manual <- data.frame(func = "", def = "", pkg = "",
-                                  funclean = "", pag = "")
+tabla_indice_manual <- data.frame(func = "", def = "", fungen = "",
+                                  pkg = "", pag = "")
 
 # todo el documento queda en un solo vector con las páginas como elemento
 elpdf2text <- pdf_text("The R Reference Index V4.2.0 indice.pdf")
@@ -56,8 +56,8 @@ for (i in 1:numdepags) {
         nomfunpag <- lineafun[length(lineafun)]
         # se integra a la base de datos
         contador <- dim(tabla_indice_manual)[1] + 1
-        tabla_indice_manual[contador,] <- c(nomfuncion, "", paquete,
-                              nomfuncion, nomfunpag)
+        tabla_indice_manual[contador,] <- c(nomfuncion, "", nomfuncion, 
+                                            paquete, nomfunpag)
       } 
     }
   }
